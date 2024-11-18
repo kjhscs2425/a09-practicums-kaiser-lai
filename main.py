@@ -1,15 +1,18 @@
 def choose_practicum():
-    practicum = input("select practicum")
-    name = input("select name ")
+    practicum = input("select practicum ")
     
     # or
     # and
     # ==
     # !=
-    if practicum != "costume" and "scenery" and \
-        "lighting" and "sound":
-        print("invalid choice")
+    if practicum != "costume" and practicum != "lighting" \
+        and practicum != "sound" and practicum != "scenery":
+        print ("invalid choice")
+        return choose_practicum()
+
     else:
-        print(f"congrats {name}, you are now in {practicum}")
+        return practicum
     
-choose_practicum()
+name = input("select name ")
+practicum = choose_practicum()
+print(f"congrats {name}, you are now in {practicum}")
